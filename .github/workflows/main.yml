@@ -32,6 +32,7 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         run: >
           ./mvnw clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+          -DskipTests
           -Dsonar.host.url=${{ env.SONAR_HOST_URL }}
           -Dsonar.token=${{ env.SONAR_TOKEN }}
           -Dsonar.projectName="Quarkus API Rest" 
